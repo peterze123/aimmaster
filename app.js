@@ -4,17 +4,17 @@ const head = document.getElementById("head");
 const sec = document.getElementById("sec");
 const h_time = document.getElementById("h-time");
 const btn = document.querySelectorAll("btn");
-var num_round = parseInt(localStorage.getItem("rounds"));
-var total_time = 0;
+let num_round = parseInt(localStorage.getItem("rounds"));
+let total_time = 0;
 //
-var round = 0;
-var headshots = 0;
-var target;
+let round = 0;
+let headshots = 0;
+let target;
 //
-var createdtime;
-var eliminatedtime;
-var reactiontime;
-var avg_reactiontime;
+let createdtime;
+let eliminatedtime;
+let reactiontime;
+let avg_reactiontime;
 //
 function random_color() {
     let s = 255;
@@ -91,7 +91,7 @@ console.log(num_round);
 make_char();
 //
 body.addEventListener("click", function(){
-    target.health -= 1;
+    target.health -= 1.5;
     if(target.eliminate()){
         make_char();
     }
