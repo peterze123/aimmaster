@@ -4,6 +4,7 @@ const head = document.getElementById("head");
 const sec = document.getElementById("sec");
 const h_time = document.getElementById("h-time");
 const btn = document.querySelectorAll("btn");
+const cursor = document.querySelector(".cursor");
 let num_round = parseInt(localStorage.getItem("rounds"));
 let total_time = 0;
 //
@@ -70,7 +71,7 @@ function new_enemy(){
 function make_char(){
     //
     target = {
-        health: 3,
+        health: 2,
         eliminate: function(){
             if (target.health <= 0){
                 eliminatedtime = Date.now();
@@ -91,7 +92,7 @@ console.log(num_round);
 make_char();
 //
 body.addEventListener("click", function(){
-    target.health -= 1.5;
+    target.health -= 1;
     if(target.eliminate()){
         make_char();
     }
@@ -101,7 +102,7 @@ head.addEventListener("click",function(){
     headshots++;
     h_time.innerHTML = headshots;
     //
-    target.health -= 3;
+    target.health -= 2;
     target.eliminate();
     make_char();
 });
